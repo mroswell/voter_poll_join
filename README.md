@@ -6,18 +6,18 @@ Join a voter with his or her precinct poll location.
 
 
 1. clone this mroswell/voter_poll_join repo.
-'''
+```
 $ git clone git@github.com:mroswell/voter_poll_join.git
-'''
+```
 
 2. Ensure that your comma-separated voter and poll files match the format of the sample csv files (voter_file.csv and precinct_polling_list.csv) Note: any prefix before the "-" in the Precinct ID and Precinct fields could work, as long as there is a 'state' field in the voter file, and a 'State/ZIP' in the poll file. The number of digits in the zip code (in either file) does not matter.
 
 3. Ensure that you have Python 2.7 installed.
 
 4. Install csvkit
-'''
+```
 $ pip install csvkit
-'''
+```
 If pip is not installed already, follow the installation documentation here:
 https://pip.pypa.io/en/latest/installing.html
 
