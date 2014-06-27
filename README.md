@@ -10,7 +10,7 @@ Join a voter with his or her precinct poll location.
    $ git clone git@github.com:mroswell/voter_poll_join.git
    ```
 
-2. Ensure that your comma-separated voter and poll files match the format of the sample csv files (voter_file.csv and precinct_polling_list.csv). Note: any prefix before the "-" in the Precinct ID and Precinct fields could work, as long as there is a 'state' field in the voter file, and a 'State/ZIP' in the poll file. The number of digits in the zip code (in either file) does not matter.
+2. Ensure that your comma-separated voter and poll files match the format of the sample csv files (_voter_file.csv_ and _precinct_polling_list.csv_). Note: any prefix before the "-" in the Precinct ID and Precinct fields could work, as long as there is a 'state' field in the voter file, and a 'State/ZIP' field in the poll file. The number of digits in the zip code (in either file) does not matter.
 
 3. Ensure that you have Python 2.7 installed.
 
@@ -20,7 +20,6 @@ Join a voter with his or her precinct poll location.
    ```
 If pip is not installed already, follow the installation documentation here:
 https://pip.pypa.io/en/latest/installing.html
-
 
 5. python voter_polls_join VOTERFILE.csv POLLFILE.csv OUTPUTFILE.csv
 
