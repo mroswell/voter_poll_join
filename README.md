@@ -21,19 +21,29 @@ Join a voter with his or her precinct poll location.
 If pip is not installed already, follow the installation documentation here:
 https://pip.pypa.io/en/latest/installing.html
 
-5. python voter_polls_join VOTERFILE.csv POLLFILE.csv OUTPUTFILE.csv
+5. Run the voter_poll_join.py program with three arguments, as follows:
 
-example:
-$ voting_poll_join voterfile.csv precinct_polling_list.csv
+   ```
+   $ python voter_poll_join.py VOTERFILE.csv POLLFILE.csv OUTPUTFILE.csv
+   ```
+   if you run:
+
+   ```
+   $ python voter_poll_join.py
+   ```
+   without any arguments, it will join the sample files. This is the equivalent to the following:
+   ```
+   $ python voter_poll_join.py voterfile.csv precinct_polling_list.csv voter_poll_joined.csv
+   ```
 
 The result will be three new files, located in the same directory as your cloned repo:
  - parsed_voter_file.csv
  - parsed_precinct_polling_list.csv
- - voter_poll_joined.csv (or whatever you specified as your OUTPUTFILE.csv)
+ - __voter_poll_joined.csv__ (or whatever you specified as your OUTPUTFILE.csv name) This is your final result.
 
-(You may choose to remove the two parsed files, since they are joined in the final voter_poll_joined.csv file.)
+(You may choose to remove the two parsed files, since they are joined in the final result file.)
 
 
-Note: To facilitate placement on github, the voter_file.csv and precinct_polling_list.csv had line ends changed to unix style via the dos2unix utility.
+Note: To facilitate placement on GitHub, the voter_file.csv and precinct_polling_list.csv had line ends changed to unix style via the dos2unix utility.
 http://sourceforge.net/projects/dos2unix/
 
