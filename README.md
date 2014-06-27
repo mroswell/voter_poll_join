@@ -22,17 +22,19 @@ If pip is not installed already, follow the installation documentation here:
 https://pip.pypa.io/en/latest/installing.html
 
 
-5. python voting_polls_join VOTERFILE.csv POLLFILE.csv OUTPUTFILE.csv
-example: append_poll voterfile.csv precinct_polling_list.csv
+5. python voter_polls_join VOTERFILE.csv POLLFILE.csv OUTPUTFILE.csv
+
+example:
+$ voting_poll_join voterfile.csv precinct_polling_list.csv
 
 The result will be three new files, located in the same directory as your cloned repo:
  - parsed_voter_file.csv
  - parsed_precinct_polling_list.csv
- - voter_poll_joined.csv
+ - voter_poll_joined.csv (or whatever you specified as your OUTPUTFILE.csv)
 
 (You may choose to remove the two parsed files, since they are joined in the final voter_poll_joined.csv file.)
 
 
-Note: the voter_file.csv and precinct_polling_list.csv had line ends changed via the dos2unix utility, to facilitate placement on github.
+Note: To facilitate placement on github, the voter_file.csv and precinct_polling_list.csv had line ends changed to unix style via the dos2unix utility.
 http://sourceforge.net/projects/dos2unix/
 

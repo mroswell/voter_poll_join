@@ -4,14 +4,13 @@ import sys
 import os
 
 
-
-
 def process_precincts(input_poll_file):
     polls = {}
     pollreader = DictReader(open(input_poll_file, 'rb'))
-
     pollwriter = DictWriter(open('parsed_precinct_polling_list.csv','wt'), ['poll_street', 'poll_city', 'poll_state', 'poll_zip', 'poll_precinct_state', 'poll_precinct_num', 'poll_precinct_id'])
+
     pollwriter.writeheader()
+
     for row in pollreader:
         polls['poll_street'] = row['Street']
         polls['poll_city'] = row['City']
@@ -25,9 +24,10 @@ def process_precincts(input_poll_file):
 def process_voterfile(input_voter_file):
     voterfile = {}
     voterreader = DictReader(open(input_voter_file, 'rb'))
-
     voterwriter = DictWriter(open('parsed_voter_file.csv','wt'), ['street', 'apt', 'city', 'state', 'zip', 'state_fips', 'precinct_num', 'precinct_id'])
+
     voterwriter.writeheader()
+
     for row in voterreader:
         voterfile['street'] = row['Street']
         voterfile['apt'] = row['Apt']
@@ -49,12 +49,10 @@ def main():
         input_voter_file = 'voter_file.csv'
         input_poll_file = 'precinct_polling_list.csv'
         outputfile = 'voter_poll_joined.csv'
+
     process_precincts(input_poll_file)
     process_voterfile(input_voter_file)
 
-    # if len(sys.argv) > 1:
-    #     os.system("csvjoin -c 7,6 --left " + input_voter_file +" "+ input_poll_file +" > "+ outputfile)
-    # else:
     os.system("csvjoin -c 8,7 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > "+ outputfile)
 
 if __name__ == "__main__":
