@@ -41,7 +41,7 @@ https://pip.pypa.io/en/latest/installing.html
     ```
     without any arguments, it will join the sample files. This is equivalent to the following:
     ```
-   $ python voter_poll_join.py voterfile.csv precinct_polling_list.csv voter_poll_joined.csv
+   $ python voter_poll_join.py voter_file.csv precinct_polling_list.csv voter_poll_joined.csv
     ```
 
 The result will be three new files, located in the same directory as your cloned repo:
