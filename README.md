@@ -44,10 +44,10 @@ https://pip.pypa.io/en/latest/installing.html
    $ python voter_poll_join.py voter_file.csv precinct_polling_list.csv voter_poll_joined.csv
     ```
 
-The result will be three new files, located in the same directory as your cloned repo:
+The result will be three new files, located by default in the same directory as your cloned repo:
  - parsed_voter_file.csv
  - parsed_precinct_polling_list.csv
- - __voter_poll_joined.csv__ (or the name you specified as your OUTPUT_FILE.csv); This file is your final result.
+ - __voter_poll_joined.csv__ (or the path/name you specified as your OUTPUT_FILE.csv); This file is your final result.
 
 (You may choose to rename the two parsed files, or remove them, since they are joined in the final result file.)
 
