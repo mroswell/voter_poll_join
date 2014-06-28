@@ -42,7 +42,7 @@ https://pip.pypa.io/en/latest/installing.html
 The result will be three new files, located in the same directory as your cloned repo:
  - parsed_voter_file.csv
  - parsed_precinct_polling_list.csv
- - __voter_poll_joined.csv__ (or whatever you specified as your OUTPUTFILE.csv name) This file is your final result.
+ - __voter_poll_joined.csv__ (or whatever name you specified as your OUTPUTFILE.csv); This file is your final result.
 
 (You may choose to remove the two parsed files, since they are joined in the final result file.)
 
