@@ -7,7 +7,7 @@ import os
 def process_precincts(input_poll_file):
     polls = {}
     pollreader = DictReader(open(input_poll_file, 'rb'))
-    pollwriter = DictWriter(open('parsed_precinct_polling_list.csv','wt'), ['poll_street', 'poll_city', 'poll_state', 'poll_zip', 'poll_precinct_state', 'poll_precinct_num', 'poll_precinct_id'])
+    pollwriter = DictWriter(open('parsed_precinct_polling_list.csv','wt'), ['poll_street', 'poll_city', 'poll_state', 'poll_zip', 'poll_country', 'poll_precinct_state', 'poll_precinct_num', 'poll_precinct_id'])
 
     pollwriter.writeheader()
 
@@ -16,6 +16,7 @@ def process_precincts(input_poll_file):
         polls['poll_city'] = row['City']
         polls['poll_state'] = row['State/ZIP'][0:2]
         polls['poll_zip'] = row['State/ZIP'][row['State/ZIP'].index(' ')+1:]
+        polls['poll_country'] = row['Country']
         polls['poll_precinct_state'] = row['Precinct'][:row['Precinct'].index('-')]
         polls['poll_precinct_num'] = row['Precinct'][row['Precinct'].index('-')+1:]
         polls['poll_precinct_id'] = polls['poll_state'] +"-" + polls['poll_precinct_num']
@@ -41,19 +42,26 @@ def process_voterfile(input_voter_file):
 
 
 def main():
-    if len(sys.argv) > 1:
+
+    if len(sys.argv) == 4:
         input_voter_file = sys.argv[1]
         input_poll_file = sys.argv[2]
         outputfile = sys.argv[3]
+        process(input_voter_file, input_poll_file, outputfile)
+    elif len(sys.argv) < 4 and len(sys.argv) > 1:
+        print("Please provide 3 filename arguments:")
+        print("python voter_poll_join.py INPUT_VOTERFILE.csv INPUT_POLLFILE.csv OUTPUT_FILE.csv")
     else: # default to sample input files
         input_voter_file = 'voter_file.csv'
         input_poll_file = 'precinct_polling_list.csv'
         outputfile = 'voter_poll_joined.csv'
+        process(input_voter_file, input_poll_file, outputfile)
 
+def process(input_voter_file, input_poll_file, outputfile):
     process_precincts(input_poll_file)
     process_voterfile(input_voter_file)
 
-    os.system("csvjoin -c 8,7 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > "+ outputfile)
+    os.system("csvjoin -c 8,8 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > "+ outputfile)
 
 if __name__ == "__main__":
   main()
