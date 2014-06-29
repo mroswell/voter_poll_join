@@ -42,7 +42,6 @@ def process_voterfile(input_voter_file):
 
 
 def main():
-
     if len(sys.argv) == 4:
         input_voter_file = sys.argv[1]
         input_poll_file = sys.argv[2]
@@ -60,7 +59,6 @@ def main():
 def process(input_voter_file, input_poll_file, output_file):
     process_precincts(input_poll_file)
     process_voterfile(input_voter_file)
-
     os.system("csvjoin -c 8,8 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > "+ output_file)
 
 if __name__ == "__main__":
