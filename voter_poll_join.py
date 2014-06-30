@@ -5,6 +5,7 @@
 from csv import DictReader, DictWriter
 import sys
 import os
+import re
 
 
 def process_precincts(input_poll_file):
@@ -25,6 +26,7 @@ def process_precincts(input_poll_file):
         polls['poll_country'] = row['Country']
         polls['poll_precinct_state'] = row['Precinct'][:row['Precinct'].index('-')]
         polls['poll_precinct_num'] = row['Precinct'][row['Precinct'].index('-') + 1:]
+        polls['poll_precinct_num'] = re.sub(r'-', '0', polls['poll_precinct_num'])
         polls['poll_precinct_id'] = polls['poll_state'] + "-" + polls['poll_precinct_num']
         pollwriter.writerow(polls)
 
