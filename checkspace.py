@@ -32,11 +32,12 @@ def process(input_voter_file, input_poll_file):
     bold_estimated_output_files_size = BOLD + str(estimated_output_files_size) + END
     # print estimated_output_files_size, output_files_size, parsed_output_files_size
     bold_freespace = BOLD + str(get_free_space_bytes('/')) + END
+    # BOLD/END strategy doesn't work on Windows
     if platform.system() == 'Windows':
-        bold_freespace = str(get_free_space_bytes)
+        bold_input_files_size = str(input_files_size)
         bold_estimated_output_files_size = str(estimated_output_files_size)
         bold_estimated_parsed_output_files_size = str(estimated_parsed_output_files_size)
-        bold_input_files_size = str(input_files_size)
+        bold_freespace = get_free_space_bytes
 
     print "------------------------"
     print "SUMMARY"
