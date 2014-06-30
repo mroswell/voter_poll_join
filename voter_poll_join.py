@@ -58,14 +58,17 @@ def main():
         input_poll_file = sys.argv[2]
         output_file = sys.argv[3]
         process(input_voter_file, input_poll_file, output_file)
-    elif len(sys.argv) < 4 and len(sys.argv) > 1:
-        print("Please provide 3 filename arguments:")
-        print("python voter_poll_join.py INPUT_VOTERFILE.csv INPUT_POLLFILE.csv OUTPUT_FILE.csv")
-    else: # default to sample input files
+    elif len(sys.argv) == 1: # default to sample input files
         input_voter_file = 'voter_file.csv'
         input_poll_file = 'precinct_polling_list.csv'
         output_file = 'voter_poll_joined.csv'
         process(input_voter_file, input_poll_file, output_file)
+    else:
+        print("Please provide 3 filename arguments:")
+        print("python voter_poll_join.py INPUT_VOTERFILE.csv INPUT_POLLFILE.csv OUTPUT_FILE.csv")
+        return
+    print "Your output file is available at {}".format(output_file)
+
 
 def process(input_voter_file, input_poll_file, output_file):
     process_precincts(input_poll_file)
