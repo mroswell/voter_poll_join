@@ -6,6 +6,7 @@ from csv import DictReader, DictWriter
 import sys
 import os
 import re
+import platform
 
 
 def process_precincts(input_poll_file):
@@ -73,7 +74,10 @@ def main():
 def process(input_voter_file, input_poll_file, output_file):
     process_precincts(input_poll_file)
     process_voterfile(input_voter_file)
-    os.system("csvjoin -c 8,8 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > {}".format(output_file))
+    if platform.system() == 'Windows':
+        os.system("/c/Python27/Scripts/csvjoin -c 8,8 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > {}".format(output_file))
+    else:
+        os.system("csvjoin -c 8,8 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > {}".format(output_file))
 
 if __name__ == "__main__":
   main()
