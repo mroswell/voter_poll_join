@@ -3,7 +3,7 @@ Instructions for Windows Users
 
 ### Introduction
 
-Installing csvkit is a challenge on Windows, probably not worth the trouble. We're using it (on Linux or OS X) only to join _parsed_voter_file.csv_ with _parsed_precinct_polling_list.csv_ on the precinct_id / _poll_precinct_id_ fields. Windows users can achieve the same goals using other means, including Excel.
+Installing csvkit is a challenge on Windows, probably not worth the trouble. We're using it (on Linux or OS X) only to join _parsed_voter_file.csv_ with _parsed_precinct_polling_list.csv_ on the precinct_id and _poll_precinct_id_ fields. Windows users can achieve the same goals using other means, including Excel.
 
 ### Detailed steps to join the two parsed files in Excel
 _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14.0.7116.5000 (32-bit))_
@@ -25,9 +25,9 @@ _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14
 
  16. Go back to the __voterfile__ worksheet. Place your cursor in cell I:1 and paste in the poll column headers.
    17. Place your cursor in cell I:2, and paste in the following.
-```
-=INDEX(polls!A$1:A$34,MATCH($H2,polls!$H$1:$H$34,0))
-```
+   ```
+   =INDEX(polls!A$1:A$34,MATCH($H2,polls!$H$1:$H$34,0))
+   ```
    18. Replace the 34 (in both places) with the last row number that you memorized above.
    19. Drag the formula dot to the right-most column. This should fill in the first row with the polling location of the first voter.
    20. Double click on the formula dot to extend the formula to all of the voters. (If this doesn't work, make sure you don't have  any blank columns between the voters and the formulas.)
@@ -38,7 +38,8 @@ _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14
    25. Spot check that your results seem in good order.
    26. Select the new poll columns. Copy, and paste values, to replace the formulas with values.
    27. If the #N/A cells bother you (the voters with no corresponding precinct) you may do a search and replace. Press Ctrl-H. Find What: #N/A    Replace with: (leave this blank). Click Replace All.
-28. Save the Excel file and/or Save As a CSV.
+
+ 28. Save the Excel file and/or Save As a CSV.
 
 Congratulations!
 
