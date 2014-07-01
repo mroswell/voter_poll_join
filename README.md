@@ -20,11 +20,18 @@ Join a voter record with the appropriate precinct poll location.
     If it is not already installed, find the download here:
     https://www.python.org/download/
 
-4. Run
+4. In your repo, run this command to ensure that you have local disk space available for the output files. (Substitute the names of your two input files)
+   ```
+   $ python checkspace.py INPUT_VOTERFILE.csv INPUT_POLLFILE.csv
+   ```
+   If you run:
    ```
    $ python checkspace.py
    ```
-   in your repo to ensure that you have local disk space available for the output files
+   without any filename arguments, it's equivalent to:
+   ```
+   $ python checkspace.py voter_file.csv precinct_polling_list.csv
+   ```
 
 5. Install csvkit
     ```
