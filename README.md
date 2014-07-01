@@ -3,7 +3,6 @@ voter_poll_join
 
 Join a voter record with the appropriate precinct poll location.
 
-
 ### Documentation
 
 1. Clone this voter_poll_join repo.
@@ -20,7 +19,7 @@ Join a voter record with the appropriate precinct poll location.
     If it is not already installed, find the download here:
     https://www.python.org/download/
 
-4. In your repo, run this command to ensure that you have local disk space available for the output files. (Substitute the names of your two input files)
+4. Optionally: run this command in your repo directory to ensure that you have local disk space available for the output files. (Substitute the names of your two input files)
    ```
    $ python checkspace.py INPUT_VOTERFILE.csv INPUT_POLLFILE.csv
    ```
@@ -60,9 +59,9 @@ https://pip.pypa.io/en/latest/installing.html
 The result will be three new files, located by default in the same directory as your cloned repo:
  - parsed_voter_file.csv
  - parsed_precinct_polling_list.csv
- - __voter_poll_joined.csv__ (or the path/filename you specified as your OUTPUT_FILE.csv); This file is your final result.
+ - __voter_poll_joined.csv__ (or the path/filename you specified as your OUTPUT_FILE.csv); This file is your final result (unless you're on Windows).
 
-(You may choose to rename the two parsed files, or remove them, since they are joined in the final result file.)
+If you're on Windows, continue with [these steps](https://github.com/mroswell/voter_poll_join/blob/master/windows_users.md "Windows User Instructions").
 
 
 ### Note
