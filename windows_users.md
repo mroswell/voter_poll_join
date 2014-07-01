@@ -7,13 +7,14 @@ Installing csvkit is a challenge on Windows, probably not worth the trouble. We'
 
 ### Detailed steps to join the two parsed files in Excel
 _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14.0.7116.5000 (32-bit))_
+
 1. Review the voter_poll_join  [documentation](https://github.com/mroswell/voter_poll_join/blob/master/README.md). Skip step 4 (installing csvkit), but complete step 5 (running the voter_poll_join.py program). This will create the two parsed voter and poll files that you will join in Excel.
 2. Open Excel
 3. Rename the left-most worksheet (Sheet1) to _voterfile_
-  4. Place your cursor in cell A:1
+4. Place your cursor in cell A:1
   5. Select the Data > From Text
   6. Navigate to the voter_poll_join repo
-  7. Select _parsed_voter_file.csv_. Complete the wizard by selecting Delimiter. Next. Deselect tab, select Comma. Next. General. Finish. Existing Worksheet. Okay. This will fill columns A through H.
+  7. Select _parsed_voter_file.csv_. Complete the wizard by selecting Delimiter. Next. Deselect tab, select Comma. Next. General.Finish. Existing Worksheet. Okay. This will fill columns A through H.
 8. Select Sheet2, and rename it _polls_
   9. Place your cursor in cell A:1 of the polls worksheet
   10. Select Data > From Text.
