@@ -44,7 +44,7 @@ _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14
   26. Select the new poll columns using the header.  Right click. Select Copy, then Paste Values (click the icon with the 123 symbol), to replace the formulas with values.
   27. To clear out the #N/A cells (these represent the voters with no corresponding precinct information): Press Ctrl-H. Find what: #N/A    Replace with: (leave this blank). Click Replace All.
 
-28. Save the Excel file and/or Save As a CSV.
+28. Save the Excel file and/or Save As a CSV file.
 
 Congratulations!
 
