@@ -1,5 +1,5 @@
 
-windows_users.md
+WINDOWS_USERS.md
 ----------------
 
 ### Introduction
