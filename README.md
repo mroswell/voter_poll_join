@@ -27,7 +27,7 @@ Join a voter record with the appropriate precinct poll location.
 If pip is not already installed, follow the installation documentation here:
 https://pip.pypa.io/en/latest/installing.html
 
-
+    [If you are a Windows user, see these important instructions.](https://github.com/mroswell/voter_poll_join/raw/master/windows_users.md "Windows User Instructions")
 
 5. Run the voter_poll_join.py program with three filename arguments, as follows:
 
