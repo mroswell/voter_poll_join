@@ -68,16 +68,20 @@ def main():
         print("Please provide 3 filename arguments:")
         print("python voter_poll_join.py INPUT_VOTERFILE.csv INPUT_POLLFILE.csv OUTPUT_FILE.csv")
         return
-    print "Your output file is available at {}".format(output_file)
 
 
 def process(input_voter_file, input_poll_file, output_file):
     process_precincts(input_poll_file)
     process_voterfile(input_voter_file)
-    if platform.system() == 'Windows':
-        os.system("/c/Python27/Scripts/csvjoin -c 8,8 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > {}".format(output_file))
-    else:
+    if platform.system() != 'Windows':
         os.system("csvjoin -c 8,8 --left parsed_voter_file.csv parsed_precinct_polling_list.csv > {}".format(output_file))
+        print "Your output file is available at '{}'".format(output_file)
+    else:
+        print "You are using Windows."
+        print "Two parsed files were created:"
+        print "    '{}' and '{}'".format("parsed_voter_file.csv", "parsed_precinct_polling_list.csv")
+        print "     You may join these two files via their 'poll_precinct_id' fields"
+        print "     Please see http://github.com/mroswell/vote_poll_join/windows_users.md for details"
 
 if __name__ == "__main__":
   main()
