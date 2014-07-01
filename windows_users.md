@@ -28,14 +28,14 @@ _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14
       ```
       =INDEX(polls!A$1:A$34,MATCH($H2,polls!$H$1:$H$34,0))
       ```
-  18. Replace the 34 (in both formula places) with the last row number that you memorized above.
-  19. Drag the formula dot to the right-most poll column. This should fill in the first row with the polling location of the first voter.
+  18. Replace the 34 (in both formula places) with the last row number that you memorized above. Press enter
+  19. Click back on Cell I:2. Drag the formula dot to the right-most poll column. This should fill in the first row with the polling location of the first voter.
   20. Double-click on the formula dot to extend the formula to all of the voters. (If this doesn't work, make sure you don't have  any blank columns between the voters and the formulas.)
-  21. Visually inspect the right-hand precinct_poll_id to ensure that it matches the one in the original file. If it does, feel free to delete the two duplicate columns (poll_precinct_num and poll_precinct_id).
-  22. Format the zip code columns as zip codes. (Select the 'poll_zip' column. Right click. Choose Format Cells > Special > Zip Code. Click 'Okay')
-  23. Format the state_fips and precinct_num with leading zeroes. (Select the two columns. Right-click. Choose Format Cells > Custom. Enter: 000. Click "Okay")
-  24. Decide if you actually want to keep the other precinct_num, and the country. Delete if unnecessary.
-  25. Spot check that your results seem in good order.
+  21. Spot check that your results seem in good order.
+  22. Visually inspect the right-hand precinct_poll_id to ensure that it matches the one in the original file. If it does, feel free to delete the two duplicate columns (poll_precinct_num and poll_precinct_id).
+  23. Format the zip code columns as zip codes. (Select the 'poll_zip' column. Right click. Choose Format Cells > Special > Zip Code. Click 'Okay')
+  24. Format the state_fips and precinct_num with leading zeroes. (Select the two columns. Right-click. Choose Format Cells > Custom. Enter: 000. Click "Okay")
+  25. Decide if you actually want to keep the other precinct_num, and the country. Delete if unnecessary.
   26. Select the new poll columns using the header.  Right click. Select Copy, then Paste Values (click the icon with the 123 symbol), to replace the formulas with values.
   27. To clear out the #N/A cells (these represent the voters with no corresponding precinct information): Press Ctrl-H. Find what: #N/A    Replace with: (leave this blank). Click Replace All.
 
@@ -43,4 +43,4 @@ _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14
 
 Congratulations!
 
-If you prefer to use a different tool than Excel to join the two parsed files, feel free. Options include Access, MySQL, Postgres, SQLite. If you prefer VLOOKUP to INDEX/MATCH in Excel, feel free to implement that. In essence, the python script creates parsed files that share a common precinct number, making it a straightforward join.
+If you prefer to use a different tool than Excel to join the two parsed files, feel free. Options include Access, MySQL, Postgres, SQLite. If you prefer VLOOKUP to INDEX/MATCH in Excel, feel free to implement that. In essence, the python script creates parsed files that share a common precinct number, enabling a straightforward join.
