@@ -48,4 +48,4 @@ _These instructions were tested on MS Excel from Microsoft Office 2010 (Excel 14
 
 Congratulations!
 
-If you prefer to use a different tool than Excel to join the two parsed files, feel free. Options include Access, MySQL, Postgres, SQLite. If you prefer VLOOKUP to INDEX/MATCH in Excel, feel free to implement that. In essence, the Python script creates parsed files that share a common precinct ID, enabling a straightforward join.
+If you prefer to use a tool other than Excel to join the two parsed files, feel free. Options include Access, MySQL, Postgres, SQLite. If you prefer VLOOKUP to INDEX/MATCH in Excel, feel free to implement that (INDEX/MATCH is generally faster). In essence, the Python script creates parsed files that share a common precinct ID, enabling a straightforward join.

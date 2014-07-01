@@ -20,7 +20,13 @@ Join a voter record with the appropriate precinct poll location.
     If it is not already installed, find the download here:
     https://www.python.org/download/
 
-4. Install csvkit
+4. Run
+   ```
+   $ python checkspace.py
+   ```
+   in your repo to ensure that you have local disk space available for the output files
+
+5. Install csvkit
     ```
     $ pip install csvkit
     ```
@@ -29,7 +35,7 @@ https://pip.pypa.io/en/latest/installing.html
 
     If you are a Windows user, [see these important instructions](https://github.com/mroswell/voter_poll_join/blob/master/windows_users.md "Windows User Instructions").
 
-5. Run the voter_poll_join.py program with three filename arguments, as follows:
+6. Run the voter_poll_join.py program with three filename arguments, as follows:
 
     ```
     $ python voter_poll_join.py INPUT_VOTERFILE.csv INPUT_POLLFILE.csv OUTPUT_FILE.csv
